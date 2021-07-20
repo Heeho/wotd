@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">World of Deathmatch</string>
+  <string name="about">
+    <b>World of Deathmatch</b>
+    \r\n\r\n
+    RPG PvP in open world. \r\nltow_ru@gmail.com, 2020
+  </string>
+  <string name="gameOver">Game over, tap to restart</string>
+</resources>

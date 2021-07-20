@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">test</string>
+  <string name="about">
+    <b>Мир бойни</b>
+    \r\n\r\n
+    Ролевое ПвП в открытом мире\r\nltow_ru@gmail.com, 2020
+  </string>
+  <string name="gameOver">Игра окончена, нажмите на экран для перезапуска</string>
+</resources>

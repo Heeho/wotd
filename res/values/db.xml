@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="delimiter_">"\\s*,\\s*"</string>
+  <string name="createtables_">"
+  drop table if exists entities;
+  create table entities (
+    _id integer primary key autoincrement,
+    description text,
+    size integer default 0,
+    model integer default 0,
+    tex integer default 0,
+    Manifestation integer default 0,
+    Target integer default 0,
+    HP integer default 0,
+    Attack integer default 0,
+    StateMachine integer default 0,
+    AI integer default 0
+  );
+
+  insert into entities (
+    description,size,model,tex,
+    Manifestation,Target,HP,Attack,Statemachine,AI
+  )
+  values
+  ('beacon',0,0,0, 1,0,0,0,0,0),
+  ('player',50,2,2, 1,1,1,1,1,0),
+  ('toad',60,2,3, 1,1,1,1,1,1);
+
+  drop table if exists models;
+  create table models (
+    _id integer primary key autoincrement,
+    description text,
+    vertices text default "0",
+    indices text default "0",
+    texcoords text default "0",
+    normals text default "0",
+    luminosity real default 0,
+    billboard integer default 0
+  );
+
+  insert into models (description) values ('landscape');
+  insert into models (description,vertices,indices,normals,luminosity,billboard)
+  values (
+    'billboard',
+    '-1,0,-2, -1,0,0, 1,0,0, 1,0,-2',
+    '0,1,2, 2,3,0',
+    '0,-1,0, 0,-1,0, 0,-1,0, 0,-1,0',
+    0.8,
+    1
+  );
+
+  drop table if exists terrains;
+  create table terrains (_id integer primary key autoincrement, value text not null);
+  insert into terrains (value) values ('grass'),('rock'),('sand'),('lava');
+
+  drop table if exists states;
+  create table states (_id integer primary key autoincrement, value text not null);
+
+  drop table if exists facings;
+  create table facings (_id integer primary key autoincrement, value text not null);
+
+
+  drop table if exists texs;
+  create table texs (
+    _id integer primary key autoincrement,
+    filename text not null,
+    states text default '1,2,3,4',
+    facings text default '1,2,3,4',
+    frames integer default 6,
+    framesize integer default 12
+  );
+
+  insert into texs (filename,states,facings,frames,framesize)
+  values
+  ('terrains.png','1','1',(select count(*) from terrains),48);
+
+  insert into texs (filename) values ('human.png'),('toad.png')
+"</string>
+</resources>

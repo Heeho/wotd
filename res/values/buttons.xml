@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="dbB">Редактор БД</string>
+  <string name="aboutB">О программе</string>
+  <string name="gameB">Погнали</string>
+</resources>
